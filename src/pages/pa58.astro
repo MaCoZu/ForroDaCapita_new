@@ -1,0 +1,37 @@
+---
+import Article from "../components/Article.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import pa58 from "../assets/images/pageimages/pa58.jpg";
+import pa58_eingang from "../assets/images/pageimages/pa58_eingang.webp";
+import hutfabrik from "../assets/images/pageimages/hutfabrik.png";
+import { Content as PA58_text } from "../content/pages/pa58.md";
+---
+
+<Layout title="PA 58">
+	<h1 class="text-3xl font-merri font-semibold mb-5">PA 58</h1>
+	<div class="flex flex-col col-span-1 lg:flex-row justify-between">
+		<div class="lg:pr-5">
+			<Article>
+				<PA58_text />
+			</Article>
+		</div>
+		<div class="flex flex-row md:flex-col gap-10">
+			<Image
+				src={pa58}
+				alt="pa58"
+				class="h-auto w-auto md:min-w-md lg:min-w-lg"
+			/>
+			<Image
+				src={pa58_eingang}
+				alt="pa58 Eingang"
+				class="h-auto w-auto md:min-w-md lg:min-w-lg"
+			/>
+			<Image
+				src={hutfabrik}
+				alt="pa58 Eingang"
+				class="h-auto w-auto md:min-w-md lg:min-w-lg"
+			/>
+		</div>
+	</div>
+</Layout>

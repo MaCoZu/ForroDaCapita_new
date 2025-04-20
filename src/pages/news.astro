@@ -1,0 +1,35 @@
+---
+// src/pages/news.astro
+import Layout from "../layouts/Layout.astro";
+import BlogViewer from "../components/BlogViewer2.jsx";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("news").then((posts) =>
+    posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+);
+
+
+const posts = allPosts.map((post) => ({
+    id: post.id,
+    slug: post.id, // Using slug instead of id as it's more appropriate for URLs
+    title: post.data.title,
+    pubDate: post.data.pubDate,
+}));
+
+// Create an object with the post body content
+const postContents = Object.fromEntries(
+    allPosts.map((post) => [
+        post.id,
+        post.body, // The raw markdown content
+    ]),
+);
+---
+
+<Layout title="News">
+    <div
+        class="container mx-auto grid lg:grid-cols-3 gap-6 h-[calc(100vh-64px)] p-4 lg:p-0
+        w-full lg:px-0 lg:pt-15 pt-5"
+    >
+        <BlogViewer posts={posts} postContents={postContents} client:load />
+    </div>
+</Layout>

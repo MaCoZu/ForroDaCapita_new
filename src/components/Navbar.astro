@@ -1,0 +1,112 @@
+---
+import Image from "astro/components/Image.astro";
+import sole from "../assets/images/pageimages/Sole_full.png";
+---
+
+<nav class="top-0 h-10 mt-6 mb-10 sm:h-15 sm:mt-7 sm:mb-14 z-10">
+    <div class="flex justify-between items-center relative">
+        <!-- Logo Left -->
+        <a href="/" class="hover:text-violet-900">
+            <h1
+                class="hidden lg:block text-3xl md:text-5xl font-budmo1 whitespace-nowrap"
+            >
+                Forró da Capita
+            </h1>
+        </a>
+
+        <!-- Right Menu Container -->
+        <div class="relative">
+            <div
+                class="flex flex-row space-x-5 text-xl font-gokhan tracking-wider z-90 navbar"
+            >
+                <div class="btn"><a href="/">Home</a></div>
+                <div class="btn"><a href="/news">News</a></div>
+
+                <div class="dropdown">
+                    <div class="subnav">
+                        <button class="subnavbtn btn">More</button>
+                        <div
+                            class="subnav-content flex flex-col bg-amber-50
+                            md:space-x-2 md:flex-row"
+                        >
+                            <a class="btn" href="/pa58">PA58</a>
+                            <a class="btn" href="/about">About</a>
+                            <a class="btn" href="http://localhost:4001">Admin</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* The navigation menu */
+    .navbar {
+        /* overflow: hidden;     */
+        background-color: inherit;
+    }
+
+    /* Navigation links */
+    .navbar a {
+        float: left;
+        color: inherit;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    /* The subnavigation menu */
+    .subnav {
+        flex: left;
+        /* overflow: hidden; */
+    }
+
+    /* Subnav button */
+    .subnav .subnavbtn {
+        /* font-size: 16px; */
+        border: none;
+        outline: none;
+        /* background-color: inherit; */
+        font-family: inherit;
+        /* margin: 0;  */
+    }
+
+    /* Add a red background color to navigation links on hover */
+    .navbar a:hover,
+    .subnav:hover .subnavbtn {
+        /* background-color: inherit; */
+    }
+
+    /* Style the subnav content - positioned absolute */
+    .subnav-content {
+        display: none;
+        position: absolute;
+        /* margin-right: 0px;s */
+        left: 0;
+        /* background-color: red; */
+        /* color: indigo; */
+        width: 100%;
+        z-index: 1;
+    }
+
+    /* Style the subnav links */
+    .subnav-content a {
+        font-size: large;
+        padding: 14px 4px;
+        float: right;
+        /* color: oklch(35.9% 0.144 278.697) */
+        /* text-decoration: none; */
+    }
+
+    /* Add a grey background color on hover */
+    .subnav-content a:hover {
+        /* background-color: #eee; */
+        color: oklch(35.9% 0.144 278.697);
+    }
+
+    /* When you move the mouse over the subnav container, open the subnav content */
+    .subnav:hover .subnav-content {
+        display: flex;
+    }
+</style>
