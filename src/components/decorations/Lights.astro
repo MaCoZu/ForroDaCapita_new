@@ -1,0 +1,148 @@
+<ul class="lights w-full h-25">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<style>
+    .lights {
+        --color-1: 255, 100, 0;
+        --color-2: 0, 204, 105;
+        --color-3: 247, 0, 148;
+        --color-4: 147, 260, 148;
+        --color-5: 267, 240, 118;
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+        gap: 10px 40px;
+        padding: 25px 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .lights li {
+        flex: none;
+        position: relative;
+        list-style: none;
+        width: 15px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .lights li:before {
+        position: absolute;
+        content: "";
+        top: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 9px;
+        background-color: #585858;
+        border-radius: 100%;
+    }
+
+    .lights li:after {
+        position: absolute;
+        content: "";
+        z-index: -1;
+        top: -2px;
+        left: 50%;
+        width: 54px;
+        height: 5px;
+        border-bottom: 1px solid #222;
+        border-radius: 100%;
+    }
+
+    .lights li:last-child:after {
+        display: none;
+    }
+
+    .lights li {
+        background-color: rgba(var(--color-1), 1);
+        box-shadow: 0 5px 24px 3px rgba(var(--color-1), 1);
+        animation: lighting-1 2.25s infinite linear;
+    }
+
+    @keyframes lighting-1 {
+        50% {
+            background-color: rgba(var(--color-1), 0.25);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-1), 0.25);
+        }
+    }
+
+    .lights li:nth-child(odd) {
+        /* 1, 3, 5, ... */
+        background-color: rgba(var(--color-2), 1);
+        box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.8);
+        animation: lighting-2 3.5s infinite ease;
+    }
+
+    @keyframes lighting-2 {
+        50% {
+            background-color: rgba(var(--color-2), 0.4);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.3);
+        }
+    }
+
+    .lights li:nth-child(4n + 2) {
+        /* 2, 6, 10, 14, ... */
+        background-color: rgba(var(--color-3), 1);
+        box-shadow: 0 5px 24px 3px rgba(var(--color-3), 1);
+        animation: lighting-3 3.5s infinite ease-in-out alternate;
+        animation-delay: 1.25s;
+    }
+
+    @keyframes lighting-3 {
+        50% {
+            background-color: rgba(var(--color-3), 0.25);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-3), 0.25);
+        }
+    .lights li:nth-child(4n + 3) {
+        /* 2, 6, 10, 14, ... */
+        background-color: rgba(var(--color-3), 1);
+        box-shadow: 0 5px 24px 3px rgba(var(--color-3), 1);
+        animation: lighting-3 3.5s infinite ease-in-out alternate;
+        animation-delay: 1.25s;
+    }
+}
+
+    @keyframes lighting-4 {
+        50% {
+            background-color: rgba(var(--color-4), 0.25);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-3), 0.25);
+        }
+    }
+    .lights li:nth-child(2n + 5) {
+        /* 2, 6, 10, 14, ... */
+        background-color: rgba(var(--color-4), 1);
+        box-shadow: 0 5px 24px 3px rgba(var(--color-4), 1);
+        animation: lighting-3 3.5s infinite linear alternate;
+        animation-delay: 1.25s;
+    }
+
+    @keyframes lighting-3 {
+        50% {
+            background-color: rgba(var(--color-4), 0.25);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-4), 0.25);
+        }
+    }
+</style>
