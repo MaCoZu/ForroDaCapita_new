@@ -1,0 +1,216 @@
+<div class="flex flex-row">
+  <h1 class="text-5xl font-budmo1 tracking-wider y-flip">F</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider turn">O</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider x-flip">R</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider spining">R</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider turn">Ó</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">&nbsp;</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">D</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">A</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">&nbsp;</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider spining_reverse">C</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">A</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">P</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">I</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider">T</h1>
+  <h1 class="text-5xl font-budmo1 tracking-wider spining">A</h1>
+</div>
+
+<style>
+  h1:hover {
+    /* font-size: calc(20px + 18vh); */
+    /* line-height: calc(20px + 20vh); */
+    /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+    text-shadow:
+      0 0 5px #ffa500,
+      0 0 15px #ffa500,
+      0 0 20px #ffa500,
+      0 0 40px #ffa500,
+      0 0 60px #f8bd50,
+      0 0 10px #ff8d00,
+      0 0 98px #fdc85f;
+    color: #fff6a9;
+    /* font-family: "Sacramento", cursive; */
+    text-align: center;
+  }
+
+  @-webkit-keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #ffe59f;
+      text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+      text-shadow:
+        0 0 5px #ffa500,
+        0 0 15px #ffa500,
+        0 0 20px #ffa500,
+        0 0 40px #ffa500,
+        0 0 60px #ffea80,
+        0 0 10px #ff8d00,
+        0 0 98px #ffe88e;
+      color: #fff6a9;
+    }
+  }
+
+  @keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #fbe582;
+      text-shadow: none;
+    }
+
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      /*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+      text-shadow:
+        0 0 5px #ffa500,
+        0 0 15px #ffa500,
+        0 0 20px #ffa500,
+        0 0 40px #ffa500,
+        0 0 60px #ff8c8c,
+        0 0 10px #ff8d00,
+        0 0 98px #f5a1a1;
+      color: #fff6a9;
+    }
+  }
+
+  @keyframes glow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  @keyframes bounce {
+    100% {
+      top: -10px;
+      text-shadow:
+        0 1px 0 #ccc,
+        0 2px 0 #ccc,
+        0 3px 0 #ccc,
+        0 4px 0 #ccc,
+        0 5px 0 #ccc,
+        0 6px 0 #ccc,
+        0 7px 0 #ccc,
+        0 8px 0 #ccc,
+        0 9px 0 #ccc,
+        0 50px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .y-flip:hover {
+    position: relative;
+    display: inline-block;
+    animation: y-flip 3s infinite;
+    /* animation-delay: calc(0.2s * var(--i)); */
+  }
+
+  .x-flip:hover {
+    position: relative;
+    display: inline-block;
+    animation: x-flip 3s infinite;
+    /* animation-delay: calc(0.2s * var(--i)); */
+  }
+
+  .turn:hover {
+    position: relative;
+    display: inline-block;
+    animation: turn 4s infinite;
+    /* animation-delay: calc(0.2s * var(--i)); */
+  }
+
+  .spining:hover {
+    position: relative;
+    display: inline-block;
+    animation: spining 4.4s cubic-bezier(0, 0.2, 0.8, 1);
+  }
+
+  .spining_reverse:hover {
+    position: relative;
+    display: inline-block;
+    animation: spining 4.4s cubic-bezier(0, 0.2, 0.8, 1);
+  }
+
+  @keyframes y-flip {
+    0%,
+    80% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes x-flip {
+    0%,
+    80% {
+      transform: rotateX(360deg);
+    }
+  }
+
+  @keyframes turn {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spining {
+    0%,
+    100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+
+  @keyframes spining_reverse {
+    0%,
+    100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(-1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+    100% {
+      transform: rotateY(-600deg);
+    }
+  }
+</style>
