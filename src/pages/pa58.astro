@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import pa_straße from "../assets/images/pageimages/pa58_images/pa_straße.jpg";
 import pa_eingang_01 from "../assets/images/pageimages/pa58_images/pa_eingang_01.jpg";
-import pa_eingang_02 from "../assets/images/pageimages/pa58_images/pa_eingang_02.jpg";
 import pa_oase from "../assets/images/pageimages/pa58_images/pa_oase.jpg";
 import pa_innenhof from "../assets/images/pageimages/pa58_images/pa_innenhof.jpg";
 import pa_garten from "../assets/images/pageimages/pa58_images/pa_garten.jpg";
@@ -12,32 +11,24 @@ import { Content as PA58_text } from "../content/pages/pa58.md";
 ---
 
 <Layout title="PA 58">
-	<h1 class="text-3xl font-merri font-semibold mb-5">PA 58</h1>
-	<div class="flex flex-col lg:flex-row justify-between">
-		<div class="lg:pr-15 w-3/5">
-			<Article>
-				<PA58_text />
-			</Article>
-		</div>
-		<div class="flex flex-row md:flex-col w-2/5 gap-10">
-			<Image
-				src={pa_straße}
-				alt="pa58"
-				class="h-auto w-auto md:min-w-md lg:min-w-lg"
-			/>
-			<Image
-				src={pa_eingang_01}
-				alt="pa58 Eingang"
-				class="h-auto w-auto md:min-w-md lg:min-w-lg"
-			/>
-		</div>
-	</div>
+  <h1 class="text-3xl font-merri font-semibold mb-5">PA 58</h1>
+  <div class="flex flex-col lg:flex-row justify-between">
+    <div class="w-full lg:w-3/5 lg:pr-15">
+      <Article>
+        <PA58_text />
+      </Article>
+    </div>
+    <div class="flex flex-col lg:w-2/5 gap-10">
+      <Image src={pa_straße} alt="pa58" class="h-auto w-full" />
+      <Image src={pa_eingang_01} alt="pa58 Eingang" class="h-auto w-full" />
+    </div>
+  </div>
 
-	<div class="grid grid-cols-2 gap-x-10 mt-10">
-		<Image src={pa_oase} alt="pa58 Eingang" class="h-auto w-auto" />
-		<Image src={pa_innenhof} alt="pa58 Eingang" class="h-auto w-auto" />
-	</div>
-	<div class="mt-10">
-		<Image src={pa_garten} alt="pa58 Eingang" class="h-auto w-auto" />
-	</div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-x-10 mt-10">
+    <Image src={pa_oase} alt="pa58 Eingang" class="h-auto w-full" />
+    <Image src={pa_innenhof} alt="pa58 Eingang" class="h-auto w-full" />
+  </div>
+  <div class="mt-10">
+    <Image src={pa_garten} alt="pa58 Eingang" class="h-auto w-full" />
+  </div>
 </Layout>
