@@ -1,6 +1,11 @@
 # build output
 dist/
 
+# Dev container clutter
+.devcontainer/
+*.code-workspace
+.pnpm-store/
+
 # folder
 public/images/ 
 
