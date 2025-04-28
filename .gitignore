@@ -7,7 +7,10 @@ dist/
 .pnpm-store/
 
 # folder
-public/images/ 
+astro-app/public/images/ 
+astro-app/src/content/news/*.md
+astro-app/src/content/news/*.mdx
+tina/content/posts/*.md
 
 # generated types
 .astro/
