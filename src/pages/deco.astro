@@ -1,20 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FDC_flicker from "../components/decorations/FDC_flicker.astro"
-import FDC_disco from "../components/decorations/FDC_disco2.astro"
-import FDC_disco2 from "../components/decorations/FDC_disco2.astro"
-import FDC_neon from "../components/decorations/FDC_neon.astro"
-import FDC_spinning from "../components/decorations/FDC_spinning.astro"
-import FDC_seventy from "../components/decorations/FDC_seventy.astro"
+import DiscoLights from "../components/decorations/DiscoLights.astro";
+import { Image } from "astro:assets";
+import bar from "../assets/images/pageimages/pa58_images/bar.jpg";
 ---
 
 <Layout title="Deco">
-<div class="flex flex-col gap-y-4">
-    <!-- <FDC_flicker/> -->
-    <FDC_disco2/>
-    <FDC_neon/>
-    <FDC_spinning/>
-    <FDC_seventy/>
-</div>
+    <div class="flex flex-col gap-y-4">
+        <DiscoLights />
 
 </Layout>

@@ -9,6 +9,7 @@ services:
       - mongo_data:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: tina
-      MONGO_INITDB_ROOT_PASSWORD: tina_password
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: tinacms
 volumes:
   mongo_data:
