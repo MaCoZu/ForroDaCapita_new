@@ -11,6 +11,7 @@ astro-app/public/images/
 astro-app/src/content/news/*.md
 astro-app/src/content/news/*.mdx
 tina/content/posts/*.md
+public/images/
 
 # generated types
 .astro/

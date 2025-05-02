@@ -1,133 +1,98 @@
 ---
-import { Image } from "astro:assets";
-import bar from "../../assets/images/pageimages/pa58_images/bar.jpg";
+import bar from "../../assets/images/pageimages/pa58_images/BrushMask_04.svg";
 ---
 
 <div class="disco-container">
-    <!-- Your image background -->
-    <Image
-        src={bar}
-        alt="background"
-        class="background-image w-full mask-y-from-75% mask-y-to-100% mask-x-from-75% mask-x-to-99%"
+    <img
+        src={bar.src}
+        alt="bar"
+        class="disco-image"
     />
 
-    <!-- Disco lights overlay -->
     <div class="disco-lights">
-        <div class="light pink"></div>
-        <div class="light blue"></div>
-        <div class="light yellow"></div>
-        <div class="light green"></div>
+        <div class="light-track">
+            <div class="light pink"></div>
+        </div>
+        <div class="light-track delay">
+            <div class="light blue"></div>
+        </div>
     </div>
 </div>
 
-<style>
+<style lang="scss">
     .disco-container {
         position: relative;
-        width: 100%;
-        height: 14vw;
+        width: 60%;
+        aspect-ratio: 5 / 2;
+        margin: auto;
         overflow: hidden;
     }
 
-    .background-image {
-        position: absolute;
+    .disco-image {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        z-index: 1;
+        object-fit: contain;
+        display: block;
+        mask-image: url("../../assets/images/pageimages/pa58_images/BrushMask_04.svg");
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .disco-lights {
         position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        // fallback mask for Safari if needed
+        mask-image: url("../../assets/images/pageimages/pa58_images/BrushMask_04.svg");
+        mask-repeat: no-repeat;
+        mask-size: cover;
+        mask-position: center;
+    }
+
+    // === ROTATING TRACK ===
+    .light-track {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1px;
+        height: 1px;
+        transform-origin: center;
+        animation: rotate-track 18s linear infinite;
+    }
+
+    .light-track.delay {
+        animation-delay: 1s;
     }
 
     .light {
         position: absolute;
-        border-radius: 10%;
-        filter: blur(10px);
-        opacity: 0.6;
-        mix-blend-mode: overlay; /* Best for image backgrounds */
-        animation: move 13s infinite linear;
-        transition: all 5ms ease;
-    }
-
-    .light::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: white;
-        border-radius: 60%;
-        filter: blur(2px);
-        animation: twinkle 3s infinite;
-    }
-
-    /* Light colors - adjust as needed */
-    .pink {
-        background: #ff00ff;
-    }
-    .blue {
-        background: #0066ff;
-    }
-    .yellow {
-        background: #ffff00;
-    }
-    .green {
-        background: #00ff88;
-    }
-
-    /* Different sizes */
-    .light:nth-child(1) {
-        width: 30px;
-        height: 20px;
-    }
-    .light:nth-child(2) {
-        width: 30px;
-        height: 30px;
-    }
-    .light:nth-child(3) {
+        left: -180px; // horizontal radius
+        top: -20px; // vertical radius
         width: 40px;
-        height: 40px;
-    }
-    .light:nth-child(4) {
-        width: 11px;
-        height: 11px;
+        height: 25px;
+        border-radius: 50%;
+        filter: blur(10px);
+        mix-blend-mode: screen;
+        opacity: 0.6;
     }
 
+    .pink {
+        background: radial-gradient(circle, #f0f, transparent 70%);
+    }
 
-    /* Circular path alternative */
-    @keyframes circular-move {
+    .blue {
+        background: radial-gradient(circle, #0ff, transparent 70%);
+    }
+
+    // === OVAL MOTION ===
+    @keyframes rotate-track {
         0% {
-            transform: rotate(0deg) translateX(100px) rotate(0deg) scale(1);
+            transform: rotate(0deg);
         }
         100% {
-            transform: rotate(360deg) translateX(400px) rotate(-360deg)
-                scale(1.3);
+            transform: rotate(360deg);
         }
-    }
-
-
-
-    /* Assign different movement styles to each light */
-    .pink {
-        width: 30px;
-        height: 20px;
-        animation-name: disco-move;
-    }
-    .blue {
-        width: 30px;
-        height: 20px;
-        animation-name: circular-move;
-        top: 50%;
-        left: 50%;
-    }
-    .yellow {
-        animation: figure8-move 10s infinite linear;
-    }
-    .green {
-        animation-name: disco-move;
-        animation-direction: reverse;
     }
 </style>

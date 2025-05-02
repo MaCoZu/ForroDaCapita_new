@@ -1,11 +1,13 @@
 ---
-import FormattedDate from "../components/FormattedDate.astro";
 import FullPost from "../components/FullPost.astro";
 import Layout from "../layouts/Layout.astro";
 import Divider from "../components/Divider.astro";
 
 import { Image } from "astro:assets";
 import MapImage from "../assets/images/pageimages/map.png";
+import Sign from "../assets/images/pageimages/pa58_images/sign.jpg";
+import Path from "../assets/images/pageimages/pa58_images/path.jpg";
+import Door from "../assets/images/pageimages/pa58_images/door.jpg";
 
 import { getCollection } from "astro:content";
 
@@ -14,7 +16,6 @@ const posts = (await getCollection("news"))
     .slice(0, 1);
 
 const [latest, ...rest] = posts;
-
 ---
 
 <Layout title="Forró da Capita | News">
@@ -27,6 +28,7 @@ const [latest, ...rest] = posts;
                         >Forró</span
                     >.
                 </h1>
+
                 <h1 class="text-xl font-merri text-slate-600">
                     Every <span class="text-violet-900 font-semibold"
                         >Tuesday</span
@@ -70,4 +72,34 @@ const [latest, ...rest] = posts;
             </div>
         </div>
     </div>
+
+    <Divider text="How to find us." className="py-10 flex" />
+
+    <div class="md:mb-5 mb-0">
+        <h1 class="text-xl font-merri text-slate-600">
+            Once in the first backyard, this is the way to go.
+        </h1>
+
+      
+    </div>
+
+    <div class="max-w-full flex flex-col md:flex-row mt-10 gap-3">
+        <Image
+            src={Sign}
+            alt="Signs"
+            class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+        />
+        <Image
+            src={Path}
+            alt="Path"
+            class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+        />
+        <Image
+            src={Door}
+            alt="Door"
+            class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+        />
+    </div>
+
+   
 </Layout>
