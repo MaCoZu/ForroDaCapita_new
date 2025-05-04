@@ -8,9 +8,9 @@ import {
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true';
 
 export default defineConfig({
-  // branch: process.env.GITHUB_BRANCH || 'main',
-  // token: process.env.TINA_TOKEN,
-  // clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  branch: process.env.GITHUB_BRANCH || 'main',
+  token: process.env.TINA_TOKEN,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
 
   contentApiUrlOverride: '/api/tina/gql',
   
@@ -44,6 +44,21 @@ export default defineConfig({
           { name: "body", label: "Body", type: "rich-text", isBody: true },
         ],
       },
+      {
+        name: "pagesText",
+        label: "Pages Text (read-only)",
+        path: "content/pages",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          }
+        },
+        fields: [
+          { name: "content", label: "Content", type: "string" },
+        ],
+      }
     ],
   },
 });

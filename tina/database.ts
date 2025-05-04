@@ -28,7 +28,6 @@ export default isLocal
             dbName: 'tinacms',
             mongoUri: process.env.MONGODB_URI as string,
         }),
-        debug: process.env.DEBUG === 'true' || false,
         namespace: branch,
         // No need for onPut / onDelete anymore here unless using Git
     })

@@ -9,7 +9,13 @@
   ],
   "compilerOptions": {
     "strictNullChecks": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "moduleResolution": "node"
   }
 }
