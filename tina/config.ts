@@ -1,5 +1,5 @@
 import { defineConfig } from 'tinacms';
-import { LocalAuthProvider } from 'tinacms' // <= LOCAL AUTH from Datalayer
+import { LocalAuthProvider } from 'tinacms' 
 import {
   TinaUserCollection,
   UsernamePasswordAuthJSProvider,
@@ -12,11 +12,16 @@ export default defineConfig({
   token: process.env.TINA_TOKEN,
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
 
-  contentApiUrlOverride: '/api/tina/gql',
+  // IMPORTANT: Add this line to fix the API URL issue
+  // apiURL: "/api/tina/gql",
+  apiURL: "http://localhost:4321/api/tina/gql",
+
+  // For backward compatibility with older TinaCMS versions
+  contentApiUrlOverride: "/api/tina/gql",
   
   authProvider: isLocal
     ? new LocalAuthProvider()
-    : new UsernamePasswordAuthJSProvider(), 
+    : new UsernamePasswordAuthJSProvider(),
 
   build: {
     outputFolder: "admin",
@@ -24,9 +29,17 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
+      mediaRoot: "images",
       publicFolder: "public",
     },
+  },
+  // Change this from "mongodb" to "local" for testing
+ 
+
+  // Configure the MongoDB adapter for self-hosting
+  database: {
+    adapter: "mongodb",
+    url: process.env.MONGODB_URI || "mongodb://localhost:27017/tina-astro",
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
@@ -40,23 +53,17 @@ export default defineConfig({
           { name: "title", label: "Title", type: "string", isTitle: true, required: true },
           { name: "pubDate", label: "Publication Date", type: "datetime" },
           { name: "updatedDate", label: "Update Date", type: "datetime" },
-          { name: "thumbnail", label: "Image", type: "image" },
+          { name: "thumbnail", label: "Image", type: "image", required: false },
           { name: "body", label: "Body", type: "rich-text", isBody: true },
         ],
       },
       {
-        name: "pagesText",
-        label: "Pages Text (read-only)",
-        path: "content/pages",
-        format: "json",
-        ui: {
-          allowedActions: {
-            create: false,
-            delete: false,
-          }
-        },
+        name: "pages",
+        label: "Pages",
+        path: "src/content/pages",
         fields: [
-          { name: "content", label: "Content", type: "string" },
+          { name: "title", label: "Title", type: "string", isTitle: true, required: true, },
+          { name: "body", label: "Page Content", type: "rich-text", isBody: true, },
         ],
       }
     ],

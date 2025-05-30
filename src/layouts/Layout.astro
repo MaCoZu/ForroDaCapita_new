@@ -1,14 +1,12 @@
 ---
-import Footer from "../components/Footer.astro";
+import Footer from '../components/Footer.astro';
 // import Navbar from "../components/Navbar.astro";
-import NewHeader from "../components/NewHeader.astro";
-import "../styles/global.css";
-
+import NewHeader from '../components/NewHeader.astro';
+import '../styles/global.css';
 
 interface Props {
   title: string;
 }
-
 
 const { title } = Astro.props;
 ---
@@ -21,10 +19,15 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="flex flex-col min-h-screen bg-amber-50 mx-4 sm:mx-[9.5rem]">
-    <NewHeader />
-    <main class="flex-grow mb-10 md:mb-20">
-      <slot />
-    </main>
-    <Footer />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <NewHeader />
+        <main class="flex-grow mb-10 md:mb-20">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+    </div>
+    <script type="module" src="/src/scripts/smoothScroll.js"></script>
   </body>
 </html>

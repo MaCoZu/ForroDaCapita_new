@@ -1,0 +1,264 @@
+[
+  {
+    "name": "forrodacapita-new",
+    "version": "0.0.1",
+    "path": "/home/mz/code/Websites/ForroDaCapita_New",
+    "private": false,
+    "dependencies": {
+      "@apollo/client": {
+        "from": "@apollo/client",
+        "version": "3.13.8",
+        "resolved": "https://registry.npmjs.org/@apollo/client/-/client-3.13.8.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@apollo+client@3.13.8_@types+react@19.1.2_graphql@16.11.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@apollo/client"
+      },
+      "@astrojs/alpinejs": {
+        "from": "@astrojs/alpinejs",
+        "version": "0.4.8",
+        "resolved": "https://registry.npmjs.org/@astrojs/alpinejs/-/alpinejs-0.4.8.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@astrojs+alpinejs@0.4.8_@types+alpinejs@3.13.11_alpinejs@3.14.9/node_modules/@astrojs/alpinejs"
+      },
+      "@astrojs/mdx": {
+        "from": "@astrojs/mdx",
+        "version": "4.2.4",
+        "resolved": "https://registry.npmjs.org/@astrojs/mdx/-/mdx-4.2.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@astrojs+mdx@4.2.4_astro@5.7.4_@types+node@22.15.3_jiti@2.4.2_lightningcss@1.29.2_rollu_d40b395623b5a8f6480056a948ff3dbd/node_modules/@astrojs/mdx"
+      },
+      "@astrojs/react": {
+        "from": "@astrojs/react",
+        "version": "4.2.4",
+        "resolved": "https://registry.npmjs.org/@astrojs/react/-/react-4.2.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@astrojs+react@4.2.4_@types+node@22.15.3_@types+react-dom@19.1.2_@types+react@19.1.2__@_8d14da21c3aa628cc78ee9a5f8bf38b7/node_modules/@astrojs/react"
+      },
+      "@astrojs/rss": {
+        "from": "@astrojs/rss",
+        "version": "4.0.11",
+        "resolved": "https://registry.npmjs.org/@astrojs/rss/-/rss-4.0.11.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@astrojs+rss@4.0.11/node_modules/@astrojs/rss"
+      },
+      "@astrojs/sitemap": {
+        "from": "@astrojs/sitemap",
+        "version": "3.3.0",
+        "resolved": "https://registry.npmjs.org/@astrojs/sitemap/-/sitemap-3.3.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@astrojs+sitemap@3.3.0/node_modules/@astrojs/sitemap"
+      },
+      "@octokit/rest": {
+        "from": "@octokit/rest",
+        "version": "21.1.1",
+        "resolved": "https://registry.npmjs.org/@octokit/rest/-/rest-21.1.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@octokit+rest@21.1.1/node_modules/@octokit/rest"
+      },
+      "@tailwindcss/vite": {
+        "from": "@tailwindcss/vite",
+        "version": "4.1.4",
+        "resolved": "https://registry.npmjs.org/@tailwindcss/vite/-/vite-4.1.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@tailwindcss+vite@4.1.4_vite@6.3.2_@types+node@22.15.3_jiti@2.4.2_lightningcss@1.29.2_sass-embedded@1.87.0_yaml@2.7.1_/node_modules/@tailwindcss/vite"
+      },
+      "@tinacms/auth": {
+        "from": "@tinacms/auth",
+        "version": "1.0.12",
+        "resolved": "https://registry.npmjs.org/@tinacms/auth/-/auth-1.0.12.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@tinacms+auth@1.0.12/node_modules/@tinacms/auth"
+      },
+      "@tinacms/datalayer": {
+        "from": "@tinacms/datalayer",
+        "version": "1.3.16",
+        "resolved": "https://registry.npmjs.org/@tinacms/datalayer/-/datalayer-1.3.16.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@tinacms+datalayer@1.3.16_react@18.3.1_typescript@5.6.3/node_modules/@tinacms/datalayer"
+      },
+      "@types/alpinejs": {
+        "from": "@types/alpinejs",
+        "version": "3.13.11",
+        "resolved": "https://registry.npmjs.org/@types/alpinejs/-/alpinejs-3.13.11.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@types+alpinejs@3.13.11/node_modules/@types/alpinejs"
+      },
+      "@types/react": {
+        "from": "@types/react",
+        "version": "19.1.2",
+        "resolved": "https://registry.npmjs.org/@types/react/-/react-19.1.2.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@types+react@19.1.2/node_modules/@types/react"
+      },
+      "@types/react-dom": {
+        "from": "@types/react-dom",
+        "version": "19.1.2",
+        "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.2.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@types+react-dom@19.1.2_@types+react@19.1.2/node_modules/@types/react-dom"
+      },
+      "alpinejs": {
+        "from": "alpinejs",
+        "version": "3.14.9",
+        "resolved": "https://registry.npmjs.org/alpinejs/-/alpinejs-3.14.9.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/alpinejs@3.14.9/node_modules/alpinejs"
+      },
+      "astro": {
+        "from": "astro",
+        "version": "5.7.4",
+        "resolved": "https://registry.npmjs.org/astro/-/astro-5.7.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/astro@5.7.4_@types+node@22.15.3_jiti@2.4.2_lightningcss@1.29.2_rollup@4.40.0_sass-embed_0013e637b4f28f1204bf0c94a881f728/node_modules/astro"
+      },
+      "concurrently": {
+        "from": "concurrently",
+        "version": "9.1.2",
+        "resolved": "https://registry.npmjs.org/concurrently/-/concurrently-9.1.2.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/concurrently@9.1.2/node_modules/concurrently"
+      },
+      "graphql": {
+        "from": "graphql",
+        "version": "16.11.0",
+        "resolved": "https://registry.npmjs.org/graphql/-/graphql-16.11.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/graphql@16.11.0/node_modules/graphql"
+      },
+      "i": {
+        "from": "i",
+        "version": "0.3.7",
+        "resolved": "https://registry.npmjs.org/i/-/i-0.3.7.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/i@0.3.7/node_modules/i"
+      },
+      "js-base64": {
+        "from": "js-base64",
+        "version": "3.7.7",
+        "resolved": "https://registry.npmjs.org/js-base64/-/js-base64-3.7.7.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/js-base64@3.7.7/node_modules/js-base64"
+      },
+      "mongodb-level": {
+        "from": "mongodb-level",
+        "version": "0.0.4",
+        "resolved": "https://registry.npmjs.org/mongodb-level/-/mongodb-level-0.0.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/mongodb-level@0.0.4_mongodb@4.17.2/node_modules/mongodb-level"
+      },
+      "next": {
+        "from": "next",
+        "version": "15.3.1",
+        "resolved": "https://registry.npmjs.org/next/-/next-15.3.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/next@15.3.1_@babel+core@7.7.7_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next"
+      },
+      "next-auth": {
+        "from": "next-auth",
+        "version": "4.24.11",
+        "resolved": "https://registry.npmjs.org/next-auth/-/next-auth-4.24.11.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/next-auth@4.24.11_next@15.3.1_@babel+core@7.7.7_react-dom@18.3.1_react@18.3.1__react@18_3a66948e5fd2e6ad4c624c33a07e8c93/node_modules/next-auth"
+      },
+      "npm": {
+        "from": "npm",
+        "version": "11.3.0",
+        "resolved": "https://registry.npmjs.org/npm/-/npm-11.3.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/npm@11.3.0/node_modules/npm"
+      },
+      "react": {
+        "from": "react",
+        "version": "18.3.1",
+        "resolved": "https://registry.npmjs.org/react/-/react-18.3.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/react@18.3.1/node_modules/react"
+      },
+      "react-dom": {
+        "from": "react-dom",
+        "version": "18.3.1",
+        "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom"
+      },
+      "react-markdown": {
+        "from": "react-markdown",
+        "version": "10.1.0",
+        "resolved": "https://registry.npmjs.org/react-markdown/-/react-markdown-10.1.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/react-markdown@10.1.0_@types+react@19.1.2_react@18.3.1/node_modules/react-markdown"
+      },
+      "react-unified": {
+        "from": "react-unified",
+        "version": "1.0.21",
+        "resolved": "https://registry.npmjs.org/react-unified/-/react-unified-1.0.21.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/react-unified@1.0.21_prop-types@15.8.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_typescript@5.6.3_webpack@4.44.1/node_modules/react-unified"
+      },
+      "rehype-raw": {
+        "from": "rehype-raw",
+        "version": "7.0.0",
+        "resolved": "https://registry.npmjs.org/rehype-raw/-/rehype-raw-7.0.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/rehype-raw@7.0.0/node_modules/rehype-raw"
+      },
+      "tailwind-merge": {
+        "from": "tailwind-merge",
+        "version": "3.2.0",
+        "resolved": "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-3.2.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/tailwind-merge@3.2.0/node_modules/tailwind-merge"
+      },
+      "tailwindcss": {
+        "from": "tailwindcss",
+        "version": "4.1.4",
+        "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.4.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/tailwindcss@4.1.4/node_modules/tailwindcss"
+      },
+      "tinacms": {
+        "from": "tinacms",
+        "version": "2.7.5",
+        "resolved": "https://registry.npmjs.org/tinacms/-/tinacms-2.7.5.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/tinacms@2.7.5_@types+react-dom@19.1.2_@types+react@19.1.2__@types+react@19.1.2_abstract_568391658205da3040149847c4b6888c/node_modules/tinacms"
+      },
+      "tinacms-authjs": {
+        "from": "tinacms-authjs",
+        "version": "10.0.5",
+        "resolved": "https://registry.npmjs.org/tinacms-authjs/-/tinacms-authjs-10.0.5.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/tinacms-authjs@10.0.5_next-auth@4.24.11_next@15.3.1_@babel+core@7.7.7_react-dom@18.3.1__75293fab72b2ccb34e351c740fa03e49/node_modules/tinacms-authjs"
+      },
+      "tinacms-gitprovider-github": {
+        "from": "tinacms-gitprovider-github",
+        "version": "2.0.16",
+        "resolved": "https://registry.npmjs.org/tinacms-gitprovider-github/-/tinacms-gitprovider-github-2.0.16.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/tinacms-gitprovider-github@2.0.16_@tinacms+datalayer@1.3.16_react@18.3.1_typescript@5.6.3_/node_modules/tinacms-gitprovider-github"
+      },
+      "upstash-redis-level": {
+        "from": "upstash-redis-level",
+        "version": "1.1.1",
+        "resolved": "https://registry.npmjs.org/upstash-redis-level/-/upstash-redis-level-1.1.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/upstash-redis-level@1.1.1/node_modules/upstash-redis-level"
+      }
+    },
+    "devDependencies": {
+      "@tailwindcss/typography": {
+        "from": "@tailwindcss/typography",
+        "version": "0.5.16",
+        "resolved": "https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.16.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@tailwindcss+typography@0.5.16_tailwindcss@4.1.4/node_modules/@tailwindcss/typography"
+      },
+      "@tinacms/cli": {
+        "from": "@tinacms/cli",
+        "version": "1.9.5",
+        "resolved": "https://registry.npmjs.org/@tinacms/cli/-/cli-1.9.5.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@tinacms+cli@1.9.5_@codemirror+language@6.0.0_@types+node@22.15.3_@types+react-dom@19.1_0138e4998914939dcec2f724aa365783/node_modules/@tinacms/cli"
+      },
+      "@types/node": {
+        "from": "@types/node",
+        "version": "22.15.3",
+        "resolved": "https://registry.npmjs.org/@types/node/-/node-22.15.3.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@types+node@22.15.3/node_modules/@types/node"
+      },
+      "@typescript-eslint/parser": {
+        "from": "@typescript-eslint/parser",
+        "version": "8.31.1",
+        "resolved": "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.31.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/@typescript-eslint+parser@8.31.1_eslint@9.26.0_jiti@2.4.2__typescript@5.6.3/node_modules/@typescript-eslint/parser"
+      },
+      "eslint": {
+        "from": "eslint",
+        "version": "9.26.0",
+        "resolved": "https://registry.npmjs.org/eslint/-/eslint-9.26.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/eslint@9.26.0_jiti@2.4.2/node_modules/eslint"
+      },
+      "eslint-plugin-astro": {
+        "from": "eslint-plugin-astro",
+        "version": "1.3.1",
+        "resolved": "https://registry.npmjs.org/eslint-plugin-astro/-/eslint-plugin-astro-1.3.1.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/eslint-plugin-astro@1.3.1_eslint@9.26.0_jiti@2.4.2_/node_modules/eslint-plugin-astro"
+      },
+      "sass-embedded": {
+        "from": "sass-embedded",
+        "version": "1.87.0",
+        "resolved": "https://registry.npmjs.org/sass-embedded/-/sass-embedded-1.87.0.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/sass-embedded@1.87.0/node_modules/sass-embedded"
+      },
+      "typescript": {
+        "from": "typescript",
+        "version": "5.6.3",
+        "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.6.3.tgz",
+        "path": "/home/mz/code/Websites/ForroDaCapita_New/node_modules/.pnpm/typescript@5.6.3/node_modules/typescript"
+      }
+    }
+  }
+]

@@ -1,39 +1,54 @@
-import database from '../../tina/database'
-import { queries } from '../../tina/__generated__/databaseClient'
-import { resolve } from '@tinacms/datalayer'
-import type { TinaClient } from 'tinacms/dist/client'
+// TinaCMS database connection handler using Apollo Client
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-export async function databaseRequest({ query, variables }) {
-    const config = {
-        useRelativeMedia: true,
-    } as any
+// Function to execute GraphQL queries against the TinaCMS database
+export async function databaseRequest({ query, variables, database }) {
+    try {
+        console.log('Database request received:', { query: query.substring(0, 100) + '...' });
 
-    const result = await resolve({
-        config,
-        database,
-        query,
-        variables,
-        verbose: true,
-    })
+        // If a direct database instance is provided, use it
+        if (database && typeof database.query === 'function') {
+            console.log('Using direct database instance');
+            const result = await database.query({
+                query,
+                variables
+            });
 
-    return result
-}
+            return {
+                data: result.data || null,
+                errors: result.errors || null
+            };
+        }
 
-export function getDatabaseConnection<GenQueries = Record<string, unknown>>({
-    queries,
-}: {
-    queries: (client: {
-        request: TinaClient<GenQueries>['request']
-    }) => GenQueries
-}) {
-    const request = async ({ query, variables }) => {
-        const data = await databaseRequest({ query, variables })
-        return { data: data.data as any, query, variables, errors: data.errors }
+        // Otherwise, use Apollo Client to make a GraphQL request
+        // This is useful for local development or when using TinaCMS in client mode
+        console.log('Using Apollo Client');
+        const client = new ApolloClient({
+            uri: '/api/tina/gql',
+            cache: new InMemoryCache()
+        });
+
+        const result = await client.query({
+            query: gql`${query}`,
+            variables
+        });
+
+        return {
+            data: result.data || null,
+            errors: result.errors || null
+        };
+    } catch (error) {
+        console.error('Database request error:', error);
+
+        return {
+            data: null,
+            errors: [
+                {
+                    message: error.message || 'Database request failed',
+                    path: error.path,
+                    locations: error.locations
+                }
+            ]
+        };
     }
-    const q = queries({
-        request,
-    })
-    return { queries: q, request }
 }
-
-export const dbConnection = getDatabaseConnection({ queries })

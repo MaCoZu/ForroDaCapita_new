@@ -1,3 +1,6 @@
+---
+title: Forró
+---
 Forró is a brazillian pair dance, with a rich tradition. The music and dance spread from the northeast to the whole of Brazil, to urban dance studios and all over world. The music and dancing styles diversified in the process, while the rural roots are always present.
 
 
