@@ -5,6 +5,7 @@ import Layout from '../layouts/NewLayout.astro';
 
 import { Image } from 'astro:assets';
 import MapImage from '../assets/images/pageimages/map.png';
+import Mascot from '../assets/images/pageimages/mascot.png';
 import Door from '../assets/images/pageimages/pa58_images/door.jpg';
 import pa_eingang_01 from '../assets/images/pageimages/pa58_images/pa_eingang_01.jpg';
 import pa_garten from '../assets/images/pageimages/pa58_images/pa_garten.jpg';
@@ -14,6 +15,7 @@ import pa_straße from '../assets/images/pageimages/pa58_images/pa_straße.jpg';
 import Path from '../assets/images/pageimages/pa58_images/path.jpg';
 import Sign from '../assets/images/pageimages/pa58_images/sign.jpg';
 import Article from '../components/Article.astro';
+import { Content as ForroText } from '../content/pages/forro.md';
 import { Content as PA58_text } from '../content/pages/pa58.md';
 
 import { getCollection } from 'astro:content';
@@ -48,7 +50,11 @@ const [latest, ...rest] = posts;
         <div class="flex-1 min-w-0 pr-18 mr-20">
           <Divider text="News" className="hidden lg:relative lg:flex md:pb-5" />
 
-          <div id="news" class="scroll-mt-[150px]">
+          <div
+            id="news"
+            class="scroll-mt-[150px]"
+            style="background: linear-gradient(45deg, rgb(253, 248, 205) 10%, oklch(98.7% 0.022 95.277) 70%);"
+          >
             <div class="md:h-[45vh] overflow-y-auto">
               <FullPost post={latest} />
             </div>
@@ -116,6 +122,20 @@ const [latest, ...rest] = posts;
   </div>
   <div class="mt-5">
     <Image src={pa_garten} alt="pa58 Eingang" class="h-auto w-full" />
+  </div>
+
+  <Divider id="forró" text="Forró" className="py-30 flex" />
+
+  <h1 class="text-3xl font-merri font-semibold mb-5 md:mt-15 mt-5">Forró</h1>
+  <div class="flex flex-col col-span-1 lg:flex-row justify-between">
+    <div class="lg:pr-5">
+      <Article>
+        <ForroText />
+      </Article>
+    </div>
+    <div class="">
+      <Image src={Mascot} alt="PA58 Mascot" class="h-auto w-auto md:min-w-md lg:min-w-lg" />
+    </div>
   </div>
 
   <style>
