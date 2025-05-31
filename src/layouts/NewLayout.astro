@@ -1,0 +1,45 @@
+---
+import Footer from '../components/Footer.astro';
+import NewHeader from '../components/NewHeader.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Smooth Scroll</title>
+    <style>
+      html,
+      body {
+        /* height: 100%; */
+        /* overflow: hidden; */
+      }
+      #smooth-content {
+        will-change: transform;
+      }
+    </style>
+  </head>
+  <body class="w-full">
+    <div id="smooth-wrapper" class="bg-amber-50">
+      <div id="smooth-content">
+        <div class="mx-4 sm:mx-[9.5rem]">
+          <NewHeader />
+          <main class="flex-grow mb-10 md:mb-20">
+            <slot />
+          </main>
+          <Footer />
+        </div>
+
+        <script type="module" src="/src/scripts/smoothScroll.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

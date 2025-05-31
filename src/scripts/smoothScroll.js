@@ -1,72 +1,74 @@
-// Import GSAP and its necessary plugins
-// These imports will be processed by Astro/Vite when this file is bundled
 import { gsap } from 'gsap';
-import { ScrollSmoother } from 'gsap/ScrollSmoother'; // Will resolve to your local installation (gsap or gsap-trial)
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register the plugins
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 let smoother;
 
-// Define a function to initialize ScrollSmoother and anchor links
-function initializeSmoothScroll() {
-  console.log('Astro:page-load event fired. Initializing/Re-initializing ScrollSmoother...');
-
-  // --- Clean up existing ScrollSmoother and ScrollTrigger instances ---
-  if (smoother) {
-    smoother.kill(); // Kills the ScrollSmoother instance
-    smoother = null; // Crucial: Nullify the reference to the old instance
-    console.log('Previous ScrollSmoother instance killed and cleared.');
-  }
-  ScrollTrigger.killAll(); // Kill all ScrollTrigger instances
-  console.log('All ScrollTrigger instances killed.');
-
-  const smoothWrapper = document.getElementById('smooth-wrapper');
-  const smoothContent = document.getElementById('smooth-content');
-
-  if (smoothWrapper && smoothContent) {
-    smoother = ScrollSmoother.create({
-      smooth: 5,
-      effects: true,
-      wrapper: smoothWrapper,
-      content: smoothContent,
-      // normalizeScroll: true, // Optional: uncomment if you experience issues on mobile devices
-    });
-    console.log('ScrollSmoother initialized successfully!');
-
-    // --- Implement Smooth Scrolling for Anchor Links ---
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const id = this.getAttribute('href');
-        const targetElement = document.querySelector(id);
-
-        if (targetElement && smoother) {
-          smoother.scrollTo(targetElement, true, 'top top');
-          console.log(`Smooth scrolling to: ${id}`);
-        } else {
-          console.warn(`Anchor target "${id}" not found or ScrollSmoother not ready.`);
-        }
-      });
-    });
-  } else {
-    console.error(
-      'ScrollSmoother: Could not find #smooth-wrapper or #smooth-content. Smooth scrolling will not be active.',
-    );
-  }
-}
-
-// Attach the initialization function to Astro's page load event
-document.addEventListener('astro:page-load', initializeSmoothScroll);
-
-// Optional: More robust cleanup before Astro's View Transitions swap content
-document.addEventListener('astro:before-swap', () => {
+function initSmoothScroll() {
+  // Cleanup previous instances
   if (smoother) {
     smoother.kill();
-    smoother = null;
+    ScrollTrigger.getAll().forEach((st) => st.kill());
   }
-  ScrollTrigger.killAll();
-  console.log('ScrollSmoother and ScrollTriggers cleaned up on astro:before-swap.');
+
+  // Ensure content is visible for height calculation
+  const content = document.getElementById('smooth-content');
+  gsap.set(content, { visibility: 'visible', opacity: 1 });
+
+  // Initialize ScrollSmoother
+  smoother = ScrollSmoother.create({
+    wrapper: '#smooth-wrapper',
+    content: '#smooth-content',
+    smooth: 1.5,
+    effects: true,
+    normalizeScroll: true,
+    ignoreMobileResize: true,
+    onUpdate: () => {
+      // Lock horizontal position to maintain margins
+      gsap.set('#smooth-content', {
+        x: 0,
+        width: '100%',
+      });
+    },
+  });
+
+  // Force GSAP to recalculate scrollable area
+  ScrollTrigger.refresh();
+
+  // Debug logging
+  console.log('Content height:', content.scrollHeight);
+  console.log('Wrapper height:', document.getElementById('smooth-wrapper').offsetHeight);
+
+  // Handle anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const target = anchor.getAttribute('href');
+      if (target && smoother) {
+        e.preventDefault();
+        smoother.scrollTo(target, true, 'top top');
+      }
+    });
+  });
+}
+
+// Initialize with delay to ensure proper rendering
+function init() {
+  requestAnimationFrame(() => {
+    if (document.readyState === 'complete') {
+      initSmoothScroll();
+    } else {
+      window.addEventListener('load', initSmoothScroll);
+    }
+    document.addEventListener('astro:page-load', initSmoothScroll);
+  });
+}
+
+init();
+
+// Cleanup
+document.addEventListener('astro:before-swap', () => {
+  if (smoother) smoother.kill();
+  ScrollTrigger.getAll().forEach((st) => st.kill());
 });
