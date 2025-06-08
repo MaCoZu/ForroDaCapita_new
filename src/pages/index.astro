@@ -4,21 +4,14 @@ import FullPost from '../components/FullPost.astro';
 import Layout from '../layouts/NewLayout.astro';
 
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import MapImage from '../assets/images/pageimages/map.png';
-import Mascot from '../assets/images/pageimages/mascot.png';
 import Door from '../assets/images/pageimages/pa58_images/door.jpg';
-import pa_eingang_01 from '../assets/images/pageimages/pa58_images/pa_eingang_01.jpg';
-import pa_garten from '../assets/images/pageimages/pa58_images/pa_garten.jpg';
-import pa_innenhof from '../assets/images/pageimages/pa58_images/pa_innenhof.jpg';
-import pa_oase from '../assets/images/pageimages/pa58_images/pa_oase.jpg';
-import pa_straße from '../assets/images/pageimages/pa58_images/pa_straße.jpg';
 import Path from '../assets/images/pageimages/pa58_images/path.jpg';
 import Sign from '../assets/images/pageimages/pa58_images/sign.jpg';
-import Article from '../components/Article.astro';
-import { Content as ForroText } from '../content/pages/forro.md';
-import { Content as PA58_text } from '../content/pages/pa58.md';
 
-import { getCollection } from 'astro:content';
+import Forro from './forro.astro';
+import PA58 from './pa58.astro';
 
 const posts = (await getCollection('news'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()) // sort by latest
@@ -28,114 +21,91 @@ const [latest, ...rest] = posts;
 ---
 
 <Layout title="Home">
-  <div class="flex flex-col col-span-1 md:flex-row md:mt-15 mt-5">
-    <div class="md:px-0 order-1">
-      <!-- Headline -->
-      <div id="we-dance-forro" class="md:mb-10 mb-0 border-spacing-4">
-        <h1 class="text-xl font-merri text-slate-600">
-          We dance <span class="text-violet-900 font-semibold">Forró</span>.
-        </h1>
+  <div class="snap-y snap-mandatory">
+    <div class="flex flex-col col-span-1 md:flex-row md:mt-15 mt-5">
+      <div class="md:px-0 order-1">
+        <!-- Headline -->
+        <div id="we-dance-forro" class="md:mb-10 mb-0 border-spacing-4">
+          <h1 class="text-xl font-merri text-slate-600">
+            We dance <span class="text-violet-900 font-semibold">Forró</span>.
+          </h1>
 
-        <h1 class="text-xl font-merri text-slate-600">
-          Every <span class="text-violet-900 font-semibold">Tuesday</span> from
-          <span class="text-violet-900 font-semibold">19:30 - 22:00</span> at
-          <span class="text-violet-900 font-semibold">Prinzenalle 58</span>, 13359 Berlin
-        </h1>
-      </div>
+          <h1 class="text-xl font-merri text-slate-600">
+            Every <span class="text-violet-900 font-semibold">Tuesday</span> from
+            <span class="text-violet-900 font-semibold">19:30 - 22:00</span> at
+            <span class="text-violet-900 font-semibold">Prinzenalle 58</span>, 13359 Berlin
+          </h1>
+        </div>
 
-      <Divider id="news" text="News" className="lg:hidden py-5 flex" />
+        <Divider id="news" text="News" className="lg:hidden py-5 flex snap-start" />
 
-      <!-- Post  -->
-      <div id="last-message" class="flex flex-col lg:flex-row order-2">
-        <div class="flex-1 min-w-0 pr-18 mr-20">
-          <Divider text="News" className="hidden lg:relative lg:flex md:pb-5" />
+        <!-- Post  -->
+        <div id="last-message" class="flex flex-col lg:flex-row order-2">
+          <div class="flex-1 min-w-0 pr-18 mr-20">
+            <Divider text="News" className="hidden lg:relative lg:flex md:pb-5 py-2" />
 
-          <div
-            id="news"
-            class="scroll-mt-[150px]"
-            style="background: linear-gradient(45deg, rgb(253, 248, 205) 10%, oklch(98.7% 0.022 95.277) 70%);"
-          >
-            <div class="md:h-[45vh] overflow-y-auto">
-              <FullPost post={latest} />
+            <div id="news" class="scroll-mt-[150px]">
+              <div
+                class="md:h-[65vh] overflow-y-auto"
+                style="background: 
+            
+            linear-gradient(45deg, rgba(253, 248, 205, 0.5) 10%, oklch(98.7% 0.022 95.277) 70%); background: circular-gradient(circle, rgba(253, 248, 205) 50%, oklch(98.7% 0.022 95.277) 70%);
+            overflow-y: scroll;
+            mask-image: 
+            linear-gradient( to bottom, black 80%, transparent 99% );"
+              >
+                <FullPost post={latest} />
+              </div>
             </div>
           </div>
-        </div>
 
-        <Divider id="map" text="Map" className="lg:hidden flex py-5 " />
+          <Divider id="map" text="Map" className="lg:hidden flex py-5 snap-start" />
 
-        <!-- Map  -->
-        <div class="lg:-mt-10 lg:w-1/4 group order-3 mb-4">
-          <Image
-            src={MapImage}
-            alt="Location map"
-            class="lg:transition-transform lg:duration-500 lg:group-hover:scale-145 lg:origin-right"
-          />
+          <!-- Map  -->
+          <div class="lg:-mt-10 lg:w-1/4 group order-3 mb-4">
+            <Image
+              src={MapImage}
+              alt="Location map"
+              class="lg:transition-transform lg:duration-500 lg:group-hover:scale-145 lg:origin-right"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <Divider id="how-to-find-us" text="How to find us." className="py-10 flex" />
+    <Divider id="how-to-find-us" text="How to find us." className="pt-10 flex snap-start" />
 
-  <div class="md:mb-5 mb-0">
-    <h1 class="text-xl font-merri text-slate-600">
-      Once in the first backyard, this is the way to go.
-    </h1>
-  </div>
-
-  <div class="max-w-full flex flex-col md:flex-row mt-10 gap-3">
-    <Image
-      src={Sign}
-      alt="Signs"
-      class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
-    />
-    <Image
-      src={Path}
-      alt="Path"
-      class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
-    />
-    <Image
-      src={Door}
-      alt="Door"
-      class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
-    />
-  </div>
-
-  <Divider id="pa58" text="PA 58" className="py-30 flex" />
-
-  <h1 class="text-3xl font-merri font-semibold">PA 58</h1>
-  <div class="flex flex-col lg:flex-row justify-between">
-    <div class="w-full lg:w-3/5 lg:pr-15">
-      <Article>
-        <PA58_text />
-      </Article>
+    <div class="md:mb-5 mb-0">
+      <h1 class="text-xl font-merri text-slate-600">
+        Once in the first backyard, this is the way to go.
+      </h1>
     </div>
-    <div class="flex flex-col lg:w-2/5 gap-5">
-      <Image src={pa_straße} alt="pa58" class="h-auto w-full" />
-      <Image src={pa_eingang_01} alt="pa58 Eingang" class="h-auto w-full" />
-    </div>
-  </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-x-5 mt-5">
-    <Image src={pa_oase} alt="pa58 Eingang" class="h-auto w-full" />
-    <Image src={pa_innenhof} alt="pa58 Eingang" class="h-auto w-full" />
-  </div>
-  <div class="mt-5">
-    <Image src={pa_garten} alt="pa58 Eingang" class="h-auto w-full" />
-  </div>
-
-  <Divider id="forró" text="Forró" className="py-30 flex" />
-
-  <h1 class="text-3xl font-merri font-semibold mb-5 md:mt-15 mt-5">Forró</h1>
-  <div class="flex flex-col col-span-1 lg:flex-row justify-between">
-    <div class="lg:pr-5">
-      <Article>
-        <ForroText />
-      </Article>
+    <div class="max-w-full flex flex-col md:flex-row mt-10 gap-3">
+      <Image
+        src={Sign}
+        alt="Signs"
+        class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+      />
+      <Image
+        src={Path}
+        alt="Path"
+        class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+      />
+      <Image
+        src={Door}
+        alt="Door"
+        class="w-full md:flex-1 max-w-full rounded-sm aspect-square hover:scale-105 transition-all object-cover"
+      />
     </div>
-    <div class="">
-      <Image src={Mascot} alt="PA58 Mascot" class="h-auto w-auto md:min-w-md lg:min-w-lg" />
-    </div>
+
+    <Divider id="pa58" text="PA 58" className="py-30 flex snap-start" />
+
+    <PA58 />
+
+    <Divider id="forró" text="Forró" className="py-30 flex" />
+
+    <Forro />
   </div>
 
   <style>

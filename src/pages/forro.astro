@@ -3,19 +3,20 @@ import { Image } from 'astro:assets';
 import Mascot from '../assets/images/pageimages/mascot.png';
 import Article from '../components/Article.astro';
 import { Content as ForroText } from '../content/pages/forro.md';
-import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="PA 58">
-  <h1 class="text-3xl font-merri font-semibold mb-5 md:mt-15 mt-5">Forró</h1>
-  <div class="flex flex-col col-span-1 lg:flex-row justify-between">
-    <div class="lg:pr-5">
-      <Article>
-        <ForroText />
-      </Article>
-    </div>
-    <div class="">
-      <Image src={Mascot} alt="PA58 Mascot" class="h-auto w-auto md:min-w-md lg:min-w-lg" />
-    </div>
+<h1 class="text-3xl font-merri font-semibold mb-5">Forró</h1>
+<div class="flex flex-col col-span-1 lg:flex-row justify-between">
+  <div class="lg:pr-15">
+    <Article>
+      <ForroText />
+    </Article>
   </div>
-</Layout>
+  <div class="">
+    <Image
+      src={Mascot}
+      alt="PA58 Mascot"
+      class="h-auto w-auto md:min-w-md lg:min-w-lg hover:scale-125"
+    />
+  </div>
+</div>

@@ -1,21 +1,12 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  // "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*", ".eslintrc.cjs"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "strictNullChecks": true,
     "jsx": "preserve",
     "jsxImportSource": "react",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
     "incremental": true
   }

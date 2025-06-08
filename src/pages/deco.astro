@@ -1,8 +1,167 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import NewHeader from "../components/NewHeader.astro";
-import { Image } from "astro:assets";
+import Layout from '../layouts/NewLayout.astro';
 ---
 
 <Layout title="Deco">
+  <div class="flex flex-col min-h-full">
+    <h1 class="text-md font-bold capitalize">Conic Gardien with mask</h1>
+    <div
+      style="height: 900px; width: 100%; 
+       background: 
+  
+    repeating-conic-gradient(
+      from 45deg at 10% 50%,
+      rgba(244, 90, 90, 0.326) 0deg 18deg,
+      rgba(242, 209, 126, 0.393) 18deg 28deg,
+      rgba(244, 153, 89, 0.335) 28deg 47deg
+    );
+
+  mask-size: 60%, 90%;
+  mask-repeat: no-repeat;
+  
+  mask-image: 
+  radial-gradient(
+  circle at 10% 50%,
+  black 2%,
+  black 10%,
+  transparent 90%
+  ),
+  
+  linear-gradient(black 20%, transparent 80%);
+
+    -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">Conic Gardien with mask</h1>
+    <div
+    class="mask-r-from-30% mask-t-from-50%"
+    style="height: 300px; width: 100%; 
+       background: 
+    repeating-conic-gradient(
+      from 45deg at 10% 50%,
+      rgba(244, 90, 90, 0.826) 0deg 18deg,
+      rgba(242, 209, 126, 0.893) 18deg 28deg,
+      rgba(244, 153, 89, 0.735) 28deg 47deg
+    );
+  mask-image: radial-gradient(
+    circle at 10% 50%,
+    black 20%,
+    black 1%,
+    transparent 70%
+  );
+"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">repeating-conic-gradient</h1>
+    <div
+      style="height: 300px; width: 100%; 
+      background: repeating-conic-gradient(from -95deg at 50% 0%, 
+      rgba(243, 142, 142, 0.849), 
+      rgba(237, 204, 142, 0.813), 
+      rgba(255, 255, 0, 0.824), 
+      rgba(124, 227, 124, 0.815), 
+      rgba(120, 120, 230, 0.824) 225deg)"
+    >
+    </div>
+ 
+    <h1 class="text-md font-bold capitalize">Radial-Gradients</h1>
+    <div
+      style="height: 300px; width: 100%; 
+      background-image: radial-gradient(farthest-corner at 40px 40px, rgb(244, 169, 169) 0,  rgb(219, 88, 221) 55%, rgb(174, 18, 138) 98%)"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">2 Radial-Gradients</h1>
+    <div
+      style="height: 300px; width: 100%; 
+      background: 
+      radial-gradient( circle at top left, rgba(255, 255, 255, 0.5), transparent ), radial-gradient( circle at top right, rgba(255, 255, 255, 0.5), transparent ), radial-gradient( at bottom left, rgba(255, 0, 255, 0.5), transparent ), 
+      radial-gradient( at bottom right, rgba(255, 100, 100, 0.5), transparent );"
+    >
+    </div>
+
+    <h1 class="text-md font-bold">Animated BG</h1>
+    <div id="animated-bg" class="h-80 w-full"></div>
+
+    <h1 class="text-md font-bold capitalize">Picture overlay</h1>
+    <div
+      style="height: 300px; width: 100%; 
+      background-image: linear-gradient(to right, rgba(230, 29, 14, 0.2), rgba(133, 7, 171, 0.3)), url('../assets/images/texture/texture.png'); background-blend-mode: overlay;"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">Repeating Linear gradient</h1>
+    <div
+      style="height:300px; width: 100%; background: repeating-linear-gradient(45deg, #eee, #eee 10px, #ccc 10px, #ccc 20px);"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">Hard-Stop Gradients</h1>
+    <div
+      style="height: 300px; weight: 100%; background-image: 
+    linear-gradient(35deg, 
+    #bdefed 0%, #8dd3cf 25%,
+    #ffc8d9 25%, #ffa3c0 50%,
+    #c3cfe2 50%, #c3cfe2 75%,
+    #a8edea 75%, #a8edea 100%);"
+    >
+    </div>
+
+    <h1 class="text-md font-bold capitalize">Conic Gradient</h1>
+    <div
+      style="height:300px; width: 100%; background-image: 
+    conic-gradient(from 90deg at 25% 25%, #a8edea, #fed6e3, #c3cfe2, #a8edea);"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">radial and linear gradients</h1>
+
+    <div
+      style="height:300px; width: 100%; background-image: 
+    radial-gradient(circle at 20% 30%, #a8edea 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, #fed6e3 0%, transparent 20%),
+    linear-gradient(to top right, #f5f7fa, #c3cfe2);"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">two linear gradients</h1>
+
+    <div
+      style="height:300px; width: 100%; background-image: 
+    linear-gradient(120deg, #a8edea 0%, transparent 40%),
+    linear-gradient(to right, #fed6e3 0%, #c3cfe2 100%);"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">three linear gradients</h1>
+
+    <div
+      style="height:300px; width: 100%; background-image: 
+      linear-gradient(45deg, rgba(168,237,234,0.7) 0%, transparent 50%),
+      linear-gradient(-45deg, rgba(254,214,227,0.7) 50%, transparent 100%),
+      linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);"
+    >
+    </div>
+    <h1 class="text-md font-bold capitalize">simple linear gradients</h1>
+
+    <div
+      style="height:300px; width: 100%; background: linear-gradient(45deg, rgba(253, 248, 205, 0.9) 10%, rgb(255, 251, 235) 70%)"
+    >
+    </div>
+  </div>
+  <style>
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    #animated-bg {
+      background: linear-gradient(-45deg, #a8edea, #fed6e3, #c3cfe2, #a8edea);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+  </style>
 </Layout>
